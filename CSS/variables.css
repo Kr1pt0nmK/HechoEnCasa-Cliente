@@ -1,0 +1,23 @@
+/* Archivo reservado exclusivamente para variables en CSS  */
+
+/* GENERAL  */
+:root {
+  --fuente: "Poppins", serif;
+  --color-pagina: #fff;
+  --transicion: all 0.3s ease-in-out;
+}
+
+/* SIDEBAR  */
+:root {
+  --sidebar-ancho: 8rem;
+  --sidebar-color: #fff;
+  --texto-sidebar-color: #c3a780;
+  --sidebar-sombra: 2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ICONOS  */
+:root {
+  --icono-color: #c3a780;
+  --icono-activo-fondo: #ffecbb;
+  --icono-hover-fondo: #fff4d9;
+}
