@@ -6,9 +6,95 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Poppins", serif;
   text-decoration: none;
   list-style: none;
-  color: #000;
-  transition: all 0.2 ease-in-out;
+}
+
+body {
+  font-family: var(--fuente);
+  display: flex;
+  height: 100vh;
+  background-color: var(--color-pagina);
+}
+
+/* == Estilo del Sidebar ==  */
+.sidebar-box {
+  width: var(--sidebar-ancho);
+  height: 100vh;
+  background-color: var(--sidebar-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 0;
+  box-shadow: var(--sidebar-sombra);
+}
+
+.sidebar-menu ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-menu ul a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-seccion {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+}
+
+.menu-icono-box {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: var(--transicion);
+}
+
+.menu-icono-box:hover {
+  background-color: var(--icono-hover-fondo);
+}
+
+.menu-seccion:hover .menu-icono-box {
+  background-color: var(--icono-hover-fondo);
+}
+
+.menu-seccion.activo:hover .menu-icono-box {
+  background-color: var(--icono-activo-fondo);
+}
+
+.menu-icono-box.activo:hover {
+  background-color: var(--icono-activo-fondo);
+}
+
+.menu-icono-box.activo {
+  background-color: var(--icono-activo-fondo);
+}
+
+.menu-icono {
+  width: 3rem;
+  height: 3rem;
+  stroke: var(--icono-color);
+  stroke-width: 2;
+  fill: none;
+}
+
+.menu-seccion span {
+  color: var(--texto-sidebar-color);
+  font-weight: 500;
+  font-size: 1rem;
 }
