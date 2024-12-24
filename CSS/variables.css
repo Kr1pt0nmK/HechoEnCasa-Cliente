@@ -2,9 +2,13 @@
 
 /* GENERAL  */
 :root {
-  --fuente: "Poppins", serif;
-  --color-pagina: #fff;
-  --transicion: all 0.3s ease-in-out;
+  --fuente: "Poppins", serif; /* Fuente de texto */
+  --color-pagina: #fff; /* Color del fondo de la página */
+  --transicion: all 0.3s ease-in-out; /* Formato de transiciones */
+  --blur-cantidad: 3px; /* Desenfoque del fondo */
+  --main-sombra: 0 0 10px 5px rgba(0, 0, 0, 0.08); /* Sombra del contenedor principal de las secciones */
+  --borde-redondeo-main: 10px 10px 0 0; /* Redondeo del contenedor princpal de las secciones */
+  --borde-redondeo-box: 10px; /* Redondeo del borde de las cajas (iconos, recetas, ingredientes, etc.) */
 }
 
 /* SIDEBAR  */
@@ -12,7 +16,7 @@
   --sidebar-ancho: 8rem;
   --sidebar-color: #fff;
   --texto-sidebar-color: #c3a780;
-  --sidebar-sombra: 2px 0 10px rgba(0, 0, 0, 0.2);
+  --sidebar-sombra: 1px 0 10px 0 rgba(0, 0, 0, 0.15);
 }
 
 /* ICONOS  */
