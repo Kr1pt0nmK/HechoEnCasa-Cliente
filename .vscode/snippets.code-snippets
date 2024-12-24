@@ -14,7 +14,7 @@
         "  <nav class='sidebar-menu'>",
         "    <ul>",
         "      <!-- Inicio -->",
-        "      <a href=''>",
+        "      <a href='inicio.html'>",
         "        <li class='menu-seccion'>",
         "          <div class='menu-icono-box activo'>",
         "            <svg class='menu-icono' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'>",
@@ -25,7 +25,7 @@
         "        </li>",
         "      </a>",
         "      <!-- Calendario -->",
-        "      <a href=''>",
+        "      <a href='calendario.html'>",
         "        <li class='menu-seccion'>",
         "          <div class='menu-icono-box'>",
         "            <svg class='menu-icono' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'>",
@@ -36,7 +36,7 @@
         "        </li>",
         "      </a>",
         "      <!-- Recetas -->",
-        "      <a href=''>",
+        "      <a href='recetas.html'>",
         "        <li class='menu-seccion'>",
         "          <div class='menu-icono-box'>",
         "            <svg class='menu-icono' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'>",
@@ -47,7 +47,7 @@
         "        </li>",
         "      </a>",
         "      <!-- Inventario -->",
-        "      <a href=''>",
+        "      <a href='inventario.html'>",
         "        <li class='menu-seccion'>",
         "          <div class='menu-icono-box'>",
         "            <svg class='menu-icono' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'>",
@@ -58,7 +58,7 @@
         "        </li>",
         "      </a>",
         "      <!-- Emergentes -->",
-        "      <a href=''>",
+        "      <a href='emergentes.html'>",
         "        <li class='menu-seccion'>",
         "          <div class='menu-icono-box'>",
         "            <svg class='menu-icono' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'>",
@@ -72,7 +72,7 @@
         "  </nav>",
         "</div>"
       ],
-      "description": "Crea una sidebar completp con todas las secciones"
+      "description": "Crea una sidebar completo con todas las secciones"
     }
   }
   
