@@ -73,6 +73,32 @@
         "</div>"
       ],
       "description": "Crea una sidebar completo con todas las secciones"
-    }
+    },
+
+    "Contenedor Principal": {
+      "prefix": "CrearMainSeccion",
+      "body": "<div class='main-box'>$1</div>",
+      "description": "Crea el contenedor principal de cada seccion"
+    },
+
+    "Fondo Desenfocado": {
+      "prefix": "CrearFondoConBlur",
+      "body": "<div class='blur-box'></div>",
+      "description": "Crea el fondo desenfocado"
+    },
+
+    "Barra de busqueda y botón para filtrar": {
+      "prefix": "CrearBarraBusqueda",
+      "body": [
+        "<div class='caja-filtrar-buscar'>",
+        "  <div class='caja-buscar'>",
+        "    <input type='text' placeholder='Busca folios aquí...' />",
+        "    <span><i class='bx bx-search bx-sm'></i></span>",
+        "  </div>",
+        "  <div class='caja-filtrar'><i class='bx bx-filter bx-md'></i></div>",
+        "</div>"
+      ],
+      "description": "Crea la barra de busqueda con los filtros"
+    },
   }
   
