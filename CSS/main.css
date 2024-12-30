@@ -43,6 +43,7 @@ body {
 
 .sidebar-menu ul a {
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -68,20 +69,8 @@ body {
   transition: var(--transicion);
 }
 
-.menu-icono-box:hover {
+.sidebar-menu ul a:hover .menu-icono-box {
   background-color: var(--icono-hover-fondo);
-}
-
-.menu-seccion:hover .menu-icono-box {
-  background-color: var(--icono-hover-fondo);
-}
-
-.menu-seccion.activo:hover .menu-icono-box {
-  background-color: var(--icono-activo-fondo);
-}
-
-.menu-icono-box.activo:hover {
-  background-color: var(--icono-activo-fondo);
 }
 
 .menu-icono-box.activo {
