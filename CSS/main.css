@@ -17,6 +17,7 @@ body {
   display: flex;
   height: 100vh;
   background-color: var(--color-pagina);
+  gap: 2rem;
 }
 
 /* == Estilo del Sidebar ==  */
