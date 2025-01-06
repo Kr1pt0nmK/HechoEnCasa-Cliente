@@ -13,6 +13,7 @@
 
     <!-- Estilos  -->
     <link rel="stylesheet" href="../CSS/main.css" />
+    <link rel="stylesheet" href="../CSS/calendario.css" />
   </head>
   <body>
     <div class="sidebar-box">
@@ -119,6 +120,17 @@
         </ul>
       </nav>
     </div>
+    <div class="caja-pedidos-pendientes">
+      <div class="caja-filtrar-buscar">
+        <div class="caja-buscar">
+          <input type="text" placeholder="Busca folios aquí..." />
+          <span><i class="bx bx-search bx-sm"></i></span>
+        </div>
+        <div class="caja-filtrar"><i class="bx bx-filter bx-md"></i></div>
+      </div>
+      <div class="contenedor-pedidos" id="pedidosPendientes"></div>
+    </div>
     <div class="main-box"></div>
   </body>
+  <script src="../JS/calendario.js"></script>
 </html>
