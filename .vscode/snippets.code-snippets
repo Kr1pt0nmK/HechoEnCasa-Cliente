@@ -100,5 +100,16 @@
       ],
       "description": "Crea la barra de busqueda con los filtros"
     },
+
+    "Agregar contenedor de elementos": {
+      "prefix": "CrearContenedorElementos",
+      "body": [
+        "<section class='contenedor-elementos'>",
+        "  <div class='boton-agregar' id='botonAgregar'>",
+        "    <i class='bx bx-plus-circle bx-spin-hover bx-md'></i>",
+        "  </div>",
+        "</section>"
+      ],
+      "description": "Crea el contendor de elementos para recetas, ingredientes o postres"
+    },
   }
-  
