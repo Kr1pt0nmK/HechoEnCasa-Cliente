@@ -69,7 +69,11 @@ body {
   transition: var(--transicion);
 }
 
-.sidebar-menu ul a:hover .menu-icono-box {
+.sidebar-menu ul a:hover .menu-icono-box:not(.activo) {
+  background-color: var(--icono-hover-fondo);
+}
+
+.menu-icono-box:hover:not(.activo) {
   background-color: var(--icono-hover-fondo);
 }
 
