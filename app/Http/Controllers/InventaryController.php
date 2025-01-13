@@ -40,26 +40,35 @@ class InventaryController extends Controller
     // Método para actualizar un ingrediente existente
     public function updateStock(Request $request, $id_ing)
     {
-        // Validar que la cantidad sea válida
         $request->validate([
-            'cantidad' => 'required|integer|min:1',
+            'cantidad' => 'required|integer',
         ]);
     
-        // Buscar el ingrediente y actualizar su stock
         $ingrediente = Inventary::findOrFail($id_ing);
-        $nuevoStock = $ingrediente->stock + $request->input('cantidad');
     
-        // Validar que el stock no exceda el máximo permitido
-        if ($nuevoStock > $ingrediente->cantidad_total) {
-            return redirect()->back()->withErrors(['error' => 'El stock no puede exceder el máximo permitido.']);
+        // Calcula el nuevo stock
+        $nuevoStock = $ingrediente->stock + $request->cantidad;
+    
+        // Verifica los límites del stock
+        if ($nuevoStock < 0) {
+            return response()->json(['success' => false, 'error' => 'El stock no puede ser menor a 0.'], 400);
         }
     
+        if ($nuevoStock > $ingrediente->cantidad_total) {
+            return response()->json(['success' => false, 'error' => 'El stock no puede exceder el máximo permitido.'], 400);
+        }
+    
+        // Actualiza el stock
         $ingrediente->stock = $nuevoStock;
         $ingrediente->save();
     
-        return redirect()->back()->with('success', 'Stock actualizado correctamente.');
+        return response()->json([
+            'success' => true,
+            'newStock' => $ingrediente->stock,
+            'maxStock' => $ingrediente->cantidad_total
+        ]);
     }
-    
+        
     // Método para eliminar un ingrediente
     public function destroy($id_ing) {
         // Encuentra el ingrediente usando la clave primaria personalizada
