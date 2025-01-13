@@ -13,8 +13,9 @@ class Inventary extends Model
     protected $table = 'ingrediente';
 
     // Campos permitidos para la asignación masiva
-    protected $fillable = ['nombre', 'unidad_total', 'stock'];
+    protected $fillable = ['nombre', 'uni_total', 'stock'];
     protected $primaryKey = 'id_ing';
+
     // Deshabilitar timestamps
     public $timestamps = false;
 
@@ -25,7 +26,12 @@ class Inventary extends Model
             $model->cantidad_total = 30; // Valor estático
             $model->cantidad_min = 5;   // Valor estático
             $model->precio = 1;         // Valor estático
-            $model->uni_total = 1;      // Valor estático
         });
+    }
+
+    // Relación con la tabla unidad_ingrediente
+    public function unidad()
+    {
+        return $this->belongsTo(Unity::class, 'uni_total', 'id_unidad');
     }
 }

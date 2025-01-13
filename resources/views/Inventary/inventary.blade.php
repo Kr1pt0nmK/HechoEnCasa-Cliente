@@ -4,14 +4,28 @@
 <div class="container">
     <h1>Gestión de Ingredientes</h1>
 
+    <!-- Filtros -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+    <form action="{{ route('ingredientes.index') }}" method="GET" class="d-flex">
+        <select name="filter" class="form-select me-2" onchange="this.form.submit()">
+            <option value="">Filtrar por...</option>
+            <option value="agotados" {{ request('filter') == 'agotados' ? 'selected' : '' }}>Agotados</option>
+            <option value="casi_agotados" {{ request('filter') == 'casi_agotados' ? 'selected' : '' }}>Casi Agotados</option>
+            <option value="gramos" {{ request('filter') == 'gramos' ? 'selected' : '' }}>Gramos</option>
+            <option value="mililitros" {{ request('filter') == 'mililitros' ? 'selected' : '' }}>Mililitros</option>
+            <option value="piezas" {{ request('filter') == 'piezas' ? 'selected' : '' }}>Piezas</option>
+        </select>
+    </form>
+        <a href="{{ route('ingredientes.index') }}" class="btn btn-secondary">Quitar Filtros</a>
+    </div>
     <!-- Botón para añadir un nuevo ingrediente -->
     <button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addIngredientModal">
         Añadir Nuevo Ingrediente
     </button>
-
+abreviacion
     <!-- Lista de Ingredientes -->
     <div class="row">
-        @foreach($ingredientes as $ingrediente)
+        @forelse($ingredientes as $ingrediente)
         <div class="col-md-4">
             <div class="card position-relative">
                 <div class="card-body">
@@ -26,8 +40,7 @@
 
                     <!-- Detalles del ingrediente -->
                     <h5>{{ $ingrediente->nombre }}</h5>
-                    <p>Cantidad: {{ $ingrediente->stock }} {{ $ingrediente->unidad_total }}</p>
-                    <!-- Botón para abrir el modal -->
+                    <p>Cantidad: {{ $ingrediente->stock }} {{ $ingrediente->unidad->abreviacion ?? 'Unidad no asignada' }}</p>
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalIngrediente{{ $ingrediente->id_ing }}">
                         Ver Detalles
                     </button>
@@ -44,8 +57,8 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <p><strong>Disponible:</strong> <span id="stock-display-{{ $ingrediente->id_ing }}">{{ $ingrediente->stock }}</span> {{ $ingrediente->unidad_total }}</p>
-                        <p><strong>Máximo:</strong> {{ $ingrediente->cantidad_total }} {{ $ingrediente->unidad_total }}</p>
+                        <p><strong>Disponible:</strong> <span id="stock-display-{{ $ingrediente->id_ing }}">{{ $ingrediente->stock }}</span> {{ $ingrediente->unidad->abreviacion }}</p>
+                        <p><strong>Máximo:</strong> {{ $ingrediente->cantidad_total }}{{ $ingrediente->unidad->abreviacion ?? 'Unidad no asignada' }}</p>
 
                         <!-- Barra de progreso -->
                         <div class="progress">
@@ -72,7 +85,13 @@
                 </div>
             </div>
         </div>
-        @endforeach
+        @empty
+        <div class="col-12">
+            <div class="alert alert-warning text-center">
+                No hay ingredientes que coincidan con el filtro seleccionado.
+            </div>
+        </div>
+        @endforelse
     </div>
 
     <!-- Modal para añadir un nuevo ingrediente -->
@@ -100,11 +119,11 @@
 
                         <!-- Unidad -->
                         <div class="mb-3">
-                            <label for="unidad_total" class="form-label">Unidad</label>
-                            <select class="form-select" id="unidad_total" name="unidad_total" required>
+                            <label for="id_unidad" class="form-label">Unidad</label>
+                            <select class="form-select" id="id_unidad" name="id_unidad" required>
                                 <option value="" disabled selected>Selecciona una unidad</option>
                                 @foreach($unidades as $unidad)
-                                    <option value="{{ $unidad->abreviacion }}">{{ $unidad->nombre_unidad }}</option>
+                                    <option value="{{ $unidad->id_unidad }}">{{ $unidad->nombre_unidad }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -118,7 +137,7 @@
         </div>
     </div>
 </div>
-
+Cantidad
 <!-- JavaScript para manejar los botones "más" y "menos" -->
 <script>
     function getInputValue(id) {
