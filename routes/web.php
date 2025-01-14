@@ -20,11 +20,12 @@ Route::get('/recetas', [RecipeController::class, 'index']);
 
 Route::get('/ingredientes', [InventaryController::class, 'index'])->name('ingredientes.index');
 Route::patch('/ingredientes/{id_ing}/update-stock', [InventaryController::class, 'updateStock'])->name('ingredientes.updateStock');
-
 Route::delete('/ingredientes/{id_ing}', [InventaryController::class, 'destroy'])->name('ingredientes.destroy');
-
 Route::get('/ingredientes/{inventary}', [InventaryController::class, 'getIngrediente'])->name('ingredientes.get');
 Route::post('/ingredientes', [InventaryController::class, 'store'])->name('ingredientes.store');
 
 // Ruta para emergentes
 Route::get('/emergentes', [EmergentController::class, 'index']);
+
+//Ruta para alert
+Route::get('/alerts', [AlertController::class, 'index'])->name('alerts.index');

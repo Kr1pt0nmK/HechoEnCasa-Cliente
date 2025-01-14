@@ -6,23 +6,24 @@
 
     <!-- Filtros -->
     <div class="d-flex justify-content-between align-items-center mb-3">
-    <form action="{{ route('ingredientes.index') }}" method="GET" class="d-flex">
-        <select name="filter" class="form-select me-2" onchange="this.form.submit()">
-            <option value="">Filtrar por...</option>
-            <option value="agotados" {{ request('filter') == 'agotados' ? 'selected' : '' }}>Agotados</option>
-            <option value="casi_agotados" {{ request('filter') == 'casi_agotados' ? 'selected' : '' }}>Casi Agotados</option>
-            <option value="gramos" {{ request('filter') == 'gramos' ? 'selected' : '' }}>Gramos</option>
-            <option value="mililitros" {{ request('filter') == 'mililitros' ? 'selected' : '' }}>Mililitros</option>
-            <option value="piezas" {{ request('filter') == 'piezas' ? 'selected' : '' }}>Piezas</option>
-        </select>
-    </form>
+        <form action="{{ route('ingredientes.index') }}" method="GET" class="d-flex">
+            <select name="filter" class="form-select me-2" onchange="this.form.submit()">
+                <option value="">Filtrar por...</option>
+                <option value="agotados" {{ request('filter') == 'agotados' ? 'selected' : '' }}>Agotados</option>
+                <option value="casi_agotados" {{ request('filter') == 'casi_agotados' ? 'selected' : '' }}>Casi Agotados</option>
+                <option value="gramos" {{ request('filter') == 'gramos' ? 'selected' : '' }}>Gramos</option>
+                <option value="mililitros" {{ request('filter') == 'mililitros' ? 'selected' : '' }}>Mililitros</option>
+                <option value="piezas" {{ request('filter') == 'piezas' ? 'selected' : '' }}>Piezas</option>
+            </select>
+        </form>
         <a href="{{ route('ingredientes.index') }}" class="btn btn-secondary">Quitar Filtros</a>
     </div>
+
     <!-- Botón para añadir un nuevo ingrediente -->
     <button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addIngredientModal">
         Añadir Nuevo Ingrediente
     </button>
-abreviacion
+
     <!-- Lista de Ingredientes -->
     <div class="row">
         @forelse($ingredientes as $ingrediente)
@@ -57,8 +58,8 @@ abreviacion
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <p><strong>Disponible:</strong> <span id="stock-display-{{ $ingrediente->id_ing }}">{{ $ingrediente->stock }}</span> {{ $ingrediente->unidad->abreviacion }}</p>
-                        <p><strong>Máximo:</strong> {{ $ingrediente->cantidad_total }}{{ $ingrediente->unidad->abreviacion ?? 'Unidad no asignada' }}</p>
+                        <p><strong>Disponible:</strong> <span id="stock-display-{{ $ingrediente->id_ing }}">{{ $ingrediente->stock }}</span> {{ $ingrediente->unidad->abreviacion ?? 'Unidad no asignada' }}</p>
+                        <p><strong>Máximo:</strong> {{ $ingrediente->cantidad_total }} {{ $ingrediente->unidad->abreviacion ?? 'Unidad no asignada' }}</p>
 
                         <!-- Barra de progreso -->
                         <div class="progress">
@@ -137,7 +138,7 @@ abreviacion
         </div>
     </div>
 </div>
-Cantidad
+
 <!-- JavaScript para manejar los botones "más" y "menos" -->
 <script>
     function getInputValue(id) {
