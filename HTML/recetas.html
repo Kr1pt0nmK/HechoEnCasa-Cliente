@@ -129,11 +129,88 @@
         <div class="caja-filtrar"><i class="bx bx-filter bx-md"></i></div>
       </div>
       <section class="contenedor-elementos">
-        <div class="boton-agregar" id="botonAgregar">
+        <div class="boton-agregar" id="botonAgregar" onclick="toggleDropdown()">
           <i class="bx bx-plus-circle bx-spin-hover bx-md"></i>
         </div>
       </section>
     </div>
+    
+    <div class="blur-box">
+      <!--Agregar una nueva receta-->
+      <section class="add-receta">
+        <button class="close-btn" id="closeModal" aria-label="Cerrar">&times;</button>
+        
+        <div class="modal">
+          <div class="modal-content">
+            <div class="recipe-form">
+              <div class="row">
+                <input type="text" placeholder="Nombre de la receta..." class="recipe-name">
+                <div class="elements">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 1.99976H9C4 1.99976 2 3.99976 2 8.99976V14.9998C2 19.9998 4 21.9998 9 21.9998H15C20 21.9998 22 19.9998 22 14.9998V12.9998M14.91 4.14976C15.58 6.53976 17.45 8.40976 19.85 9.08976M16.04 3.01976L8.16 10.8998C7.86 11.1998 7.56 11.7898 7.5 12.2198L7.07 15.2298C6.91 16.3198 7.68 17.0798 8.77 16.9298L11.78 16.4998C12.2 16.4398 12.79 16.1398 13.1 15.8398L20.98 7.95976C22.34 6.59976 22.98 5.01976 20.98 3.01976C18.98 1.01976 17.4 1.65976 16.04 3.01976Z" stroke="#B6B6B6" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <svg class="icon" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_274_2939)">
+                      <path d="M3 6H5M5 6H21M5 6V20C5 20.5304 5.21071 21.0391 5.58579 21.4142C5.96086 21.7893 6.46957 22 7 22H17C17.5304 22 18.0391 21.7893 18.4142 21.4142C18.7893 21.0391 19 20.5304 19 20V6M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M10 11V17M14 11V17" stroke="#B6B6B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_274_2939">
+                        <rect width="24" height="24" fill="white"/>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+              <div class="row">
+                <label>Ingredientes</label>
+                <div class="elements">
+                  <svg class="icon" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3.49019V18.4902M7.75 6.49019H5.5M8.5 9.49019H5.5M22 14.7402V2.67019C22 1.47019 21.02 0.580189 19.83 0.680189H19.77C17.67 0.860189 14.48 1.93019 12.7 3.05019L12.53 3.16019C12.24 3.34019 11.76 3.34019 11.47 3.16019L11.22 3.01019C9.44 1.90019 6.26 0.840189 4.16 0.670189C2.97 0.570189 2 1.47019 2 2.66019V14.7402C2 15.7002 2.78 16.6002 3.74 16.7202L4.03 16.7602C6.2 17.0502 9.55 18.1502 11.47 19.2002L11.51 19.2202C11.78 19.3702 12.21 19.3702 12.47 19.2202C14.39 18.1602 17.75 17.0502 19.93 16.7602L20.26 16.7202C21.22 16.6002 22 15.7002 22 14.7402Z" stroke="#8A8A8E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <div class="banner-numero">...</div>
+                </div>
+              </div>
+              <div class="row">
+                <label>Porciones</label>
+                <div class="elements" id="element">
+                  <svg class="icon" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.49332 15.8821C9.09253 15.9594 8.67788 16 8.25334 16C4.79972 16 2 13.3137 2 10C2 6.68629 4.79972 4 8.25334 4C8.67788 4 9.09253 4.04059 9.49332 4.11795M22 10C22 13.3137 19.2003 16 15.7467 16C12.293 16 9.49332 13.3137 9.49332 10C9.49332 6.68629 12.293 4 15.7467 4C19.2003 4 22 6.68629 22 10Z" stroke="#8A8A8E" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  <input type="text" placeholder="..." class="num-porciones">
+                </div>
+              </div>
+              <table class="ingredients-table">
+                <thead>
+                  <tr>
+                    <th>Ingrediente</th>
+                    <th>Cantidad</th>
+                    <th>Unidad</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <button class="add-ing">
+                        <svg viewBox="0 0 46 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="46" height="19" rx="9.5" fill="white"/>
+                          <rect x="0.5" y="0.5" width="45" height="18" rx="9" stroke="black" stroke-opacity="0.3"/>
+                          <path d="M19 9H27M23 13V5" stroke="#A49C9C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                    
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
   </body>
   <script src="../JS/recetas.js"></script>
 </html>

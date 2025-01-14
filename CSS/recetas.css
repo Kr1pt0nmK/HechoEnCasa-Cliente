@@ -18,3 +18,157 @@
 hr {
   color: var(--color-texto-elemento);
 }
+
+.blur-box{
+  display:none;
+}
+
+.blur-box.show{
+  display: flex;
+}
+
+.add-receta { 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-receta .modal {
+  background-color: #fff;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: var(--elemento-sombra);
+  padding: 20px;
+  overflow: hidden;
+  margin: 100px auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 90px; 
+  right: calc(45% - 220px); 
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  color: #666;
+  cursor: pointer;
+  box-shadow: var(--elemento-sombra);
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background-color: #f2f2f2;
+  color: #000;
+  box-shadow: var(--elemento-sombra);
+}
+
+.recipe-form input,
+.recipe-form select {
+  width: 70%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.recipe-name {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.recipe-form input.recipe-name {
+  border: 1px solid white; 
+  outline: none; 
+}
+
+
+.dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0
+}
+
+.ingredients-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #F4E3D5;
+}
+
+.ingredients-table th {
+  background-color: #BFA173;
+  color: #fff;
+  padding: 10px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.ingredients-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.add-ing {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  width: 46px; 
+  height: 19px; 
+}
+
+
+.add-ing svg {
+  width: 52px;
+  height: 52px;
+}
+
+.add-ing svg:hover {
+  stroke: #626262; 
+}
+
+input.num-porciones {
+  width: 20%;
+  text-align: center;
+  color: #8A8A8E;
+}
+
+.icon {
+  width: 25px; 
+  height: auto; 
+}
+
+.banner-numero {
+  text-align: center;
+  color: #8A8A8E;
+}
+
+.elements{
+  display: flex;
+  gap: 1rem;
+}
+
+div#element {
+  display: flex;
+  justify-content: flex-end;
+}
