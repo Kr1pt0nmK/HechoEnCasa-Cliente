@@ -37,22 +37,24 @@ hr {
 }
 
 .add-receta .modal {
-  background-color: #fff;
+  background-color: white;
   width: 400px;
   border-radius: 10px;
   box-shadow: var(--elemento-sombra);
   padding: 20px;
   overflow: hidden;
   margin: 100px auto;
+  text-align: center;
+  transform: translate(0%, 25%);
 }
 
 .close-btn {
   position: absolute;
-  top: 90px; 
-  right: calc(45% - 220px); 
+  top: 149px; 
+  right: calc(48% - 220px); 
   width: 30px;
   height: 30px;
-  background-color: #fff;
+  background-color: white;
   border: 1px solid #ccc;
   border-radius: 50%;
   font-size: 18px;
@@ -109,12 +111,13 @@ hr {
   margin-top: 15px;
   border-radius: 10px;
   overflow: hidden;
-  background-color: #F4E3D5;
+  background-color: white;
+  box-shadow: var(--elemento-sombra);
 }
 
 .ingredients-table th {
   background-color: #BFA173;
-  color: #fff;
+  color: white;
   padding: 10px;
   text-align: left;
   font-weight: bold;
@@ -172,3 +175,75 @@ div#element {
   display: flex;
   justify-content: flex-end;
 }
+
+.botones{
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn-agregar{
+  background-color: #57D481;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-agregar:hover{
+  background-color: #1dcf58;
+}
+
+.btn-cancelar{
+  background-color: #D44F4F;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-cancelar:hover{
+  background-color: #d01d1d;
+}
+
+.ingredientes-op {
+  display: none;
+  width: 10%;
+  box-shadow: var(--elemento-sombra);
+  padding: 10px;
+  border-radius: 10px;
+  transform: translate(550%, -42%);
+  background-color: white;
+}
+
+.ingredientes-op ul {
+  list-style: none;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ingredientes-op ul li {
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.ingredientes-op ul li:hover {
+  background-color: #f0f0f0;
+}
+
+.ingredientes-op input{
+  font-family: var(--fuente);
+  width: 100%;
+}
+
+#icon-edit, #icon-eliminar{
+  cursor: pointer;
+}
+
