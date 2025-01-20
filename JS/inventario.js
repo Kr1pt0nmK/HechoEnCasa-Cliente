@@ -38,3 +38,36 @@ let mostrarIngredientes = () => {
     .catch(error => console.error("Error al cargar los datos:", error));
 
 }
+
+
+
+/*APENAS AGREGADO*/
+document.addEventListener("DOMContentLoaded", () => {
+    const popup = document.getElementById("popup"); // Popup
+    const botonAgregar = document.getElementById("botonAgregar"); // Botón agregar
+    const cerrarPopup = document.getElementById("cerrarPopup"); // Botón cerrar
+    const fondoContenedor = document.querySelector(".fondo-contenedor"); // Fondo
+  
+    // Mostrar el popup y desenfocar el fondo
+    botonAgregar.addEventListener("click", () => {
+      popup.style.display = "flex"; // Muestra el popup
+      fondoContenedor.classList.add("fondo-borrado"); // Aplica el desenfoque
+    });
+  
+    // Cerrar el popup y restaurar el fondo
+    cerrarPopup.addEventListener("click", () => {
+      popup.style.display = "none"; // Oculta el popup
+     
+    });
+  /*
+    // Cerrar el popup si se hace clic fuera de él
+    window.addEventListener("click", (e) => {
+      if (e.target === popup) {
+        popup.style.display = "none";
+        fondoContenedor.classList.remove("fondo-borrado");
+      }
+    });*/
+  });
+  
+  
+  
