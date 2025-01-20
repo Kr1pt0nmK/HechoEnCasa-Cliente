@@ -16,3 +16,5 @@ if ($accion == "mostrar") {
 
     echo json_encode($datos);
 }
+
+?>
