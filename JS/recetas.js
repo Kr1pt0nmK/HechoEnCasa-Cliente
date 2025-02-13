@@ -28,36 +28,3 @@ let mostrarIngredientes = () => {
     .catch(error => console.error("Error al cargar los datos:", error));
 
 }
-
-function toggleDropdown() {
-    const blurBox = document.querySelector('.blur-box');
-    blurBox.classList.toggle('show');
-}
-
-document.getElementById('closeModal').addEventListener('click', function () {
-    const blurBox = document.querySelector('.blur-box');
-    
-    if (blurBox) {
-      blurBox.classList.remove('show');
-    }
-});
-
-document.getElementById('Cancelar').addEventListener('click', function () {
-    const blurBox = document.querySelector('.blur-box');
-    
-    if (blurBox) {
-      blurBox.classList.remove('show');
-    }
-});
-
-const addIngredientButton = document.getElementById("addIngredientButton");
-const ingredientOptions = document.getElementById("ingredientOptions");
-
-    addIngredientButton.addEventListener("click", () => {
-      if (ingredientOptions.style.display === "none" || !ingredientOptions.style.display) {
-        ingredientOptions.style.display = "block";
-      } else {
-        ingredientOptions.style.display = "none";
-      }
-    });
-  
