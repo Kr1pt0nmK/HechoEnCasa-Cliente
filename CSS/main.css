@@ -223,3 +223,7 @@ body {
 .boton-agregar:hover {
   transform: scale(1.1);
 }
+
+.bx {
+  transition: var(--transicion);
+}

@@ -75,6 +75,8 @@
   height: 75%;
   padding: 3rem;
   transition: var(--transicion);
+  color: var(--inicio-icono-color);
+  font-size: 9rem;
 }
 
 .caja-inicio-texto {
@@ -103,5 +105,9 @@
   stroke: var(--inicio-icono-color-hover);
 }
 .caja-seccion-inicio:hover .caja-inicio-texto {
+  color: var(--inicio-icono-color-hover);
+}
+
+.caja-inicio-icono:hover .bx {
   color: var(--inicio-icono-color-hover);
 }

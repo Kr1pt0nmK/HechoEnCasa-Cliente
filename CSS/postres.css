@@ -14,3 +14,8 @@
 .caja-filtrar-buscar {
   width: 100%;
 }
+
+.icono-postre {
+  color: var(--icono-color);
+  font-size: 2rem;
+}
