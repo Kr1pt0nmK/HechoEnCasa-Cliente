@@ -22,19 +22,21 @@
 
 .cerrar {
   position: absolute;
-  left: 68%;
-  top: 26%;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-  background-color: white;
-  box-shadow: var(--elemento-sombra);
+  top: -26px;
   width: 30px;
   height: 30px;
-  font-size: 20px;
+  left: 410px;
+  bottom: 100px;
+  background-color: #fff;
+  border: 1px solid #ccc;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  color: #666;
+  cursor: pointer;
+  box-shadow: var(--elemento-sombra);
+  transition: all 0.2s ease-in-out;
 }
 
 .crear-categoria, .info-categoria {

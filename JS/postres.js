@@ -53,7 +53,18 @@ document.getElementById("botonAgregar").addEventListener("click", () => {
   if(iconoF.classList.contains("activo")) {
     //crearPopupAgregarFijo();
   } else if(iconoC.classList.contains("activo")) {
-    agregarCategoria();
+    crearPopupAgregarCategoria();
+
+    const inputNomC = document.getElementById("input-nomC")
+    const btnEditar = document.getElementById("editar")
+
+    btnEditar.addEventListener("click", () => {
+        if (!inputNomC.disabled) {
+            inputNomC.disabled = true
+        } else {
+            inputNomC.disabled = false
+        }
+    })
   } else if(iconoT.classList.contains("activo")) {
     //crearPopupAgregarTemporada();
   } else if(iconoE.classList.contains("activo")) {
@@ -63,19 +74,19 @@ document.getElementById("botonAgregar").addEventListener("click", () => {
 });
 
 // Popup para agregar categoría
-function agregarCategoria() {
+function crearPopupAgregarCategoria() {
     const blurBox = document.createElement("div");
     blurBox.className = "blur-box";
 
     blurBox.innerHTML = `
-        <div class="cerrar" onclick="cerrarPopup()">&times;</div>
-      
-        <div class="crear-categoria">
+      <div class="crear-categoria">
+        <button class="cerrar" onclick="cerrarPopup()">&times;</button>
+
         <div class="linea1">
-          <input class="input-nomC" type="text" placeholder="Nombre de la categoría.." diseabled>
+          <input class="input-nomC" id="input-nomC" type="text" placeholder="Nombre de la categoría.." disabled>
           <div class="linea1-derecha">
-            <i class='bx bx-edit icono-pos'></i>
-            <i class='bx bx-trash icono-pos'></i>
+            <i class='bx bx-edit icono-pos' id="editar"></i>
+            <i class='bx bx-trash icono-pos' id="borrar"></i>
           </div>
         </div>
         <hr>
@@ -123,11 +134,11 @@ function agregarCategoria() {
   blurBox.className = "blur-box";
 
   blurBox.innerHTML = `
-    <div class="cerrar" onclick="cerrarPopup()">&times;</div>
-      
     <div class="info-categoria">
+      <button class="cerrar" onclick="cerrarPopup()">&times;</button>
+
       <div class="linea1">
-        <input class="input-nomC" type="text" placeholder="Cupcakes" diseabled>
+        <input class="nomC" id="nomC" type="text" placeholder="Nombre de la categoría.." value="" diseabled>
         <div class="linea1-derecha">
             <i class='bx bx-edit icono-categoria' id="btn-edit"></i>
             <i class='bx bx-trash icono-categoria'></i>
