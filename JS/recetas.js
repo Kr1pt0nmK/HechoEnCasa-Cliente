@@ -55,24 +55,14 @@ function crearPopupAgregarReceta() {
     blurBox.className = "blur-box";
 
     blurBox.innerHTML = `
-<<<<<<< HEAD
-=======
-        <div class="cerrar" onclick="cerrarPopup()">&times;</div>
-        
->>>>>>> ec1931b12a1e66c622a2a70660b20e7641db3ae6
         <div class="crear-receta">
             <button class="cerrar" onclick="cerrarPopup()">&times;</button>
 
             <div class="linea1">
                 <input class="input-nom" id="input-nom" type="text" placeholder="Nombre de la receta.." disabled>
                 <div class="linea1-derecha">
-<<<<<<< HEAD
                     <i class='bx bx-edit icono-receta' id="editar"></i>
                     <i class='bx bx-trash icono-receta' id="borrar"></i>
-=======
-                    <i class='bx bx-edit'></i>
-                    <i class='bx bx-trash'></i>
->>>>>>> ec1931b12a1e66c622a2a70660b20e7641db3ae6
                 </div>
             </div>
             <hr>
@@ -86,13 +76,8 @@ function crearPopupAgregarReceta() {
             <div class="linea3">
                 <p>Porciones</p>
                 <div class="linea3-derecha">
-<<<<<<< HEAD
                     <i class='bx bx-doughnut-chart icono-receta'></i>
                     <input class="input-num" style="color: #8A8A8E type="number" placeholder="..." min="0">
-=======
-                    <i class='bx bx-doughnut-chart'></i>
-                    <input class="input-num" type="number" placeholder="..." min="0">
->>>>>>> ec1931b12a1e66c622a2a70660b20e7641db3ae6
                 </div>
             </div>
 
@@ -135,7 +120,6 @@ document.querySelector(".contenedor-elementos").addEventListener("click", (event
         let index = Array.from(document.querySelectorAll(".caja-elemento")).indexOf(elemento);
         mostrarIngredientes().then(data => {
             crearPopupInfoReceta(data[index]); 
-<<<<<<< HEAD
 
             const nomReceta = document.getElementById("nom-receta")
             const btnEditar = document.getElementById("editar")
@@ -147,8 +131,6 @@ document.querySelector(".contenedor-elementos").addEventListener("click", (event
                     nomReceta.disabled = false
                 }
             })
-=======
->>>>>>> ec1931b12a1e66c622a2a70660b20e7641db3ae6
             console.log("Click")
         });
     }
@@ -159,7 +141,6 @@ function crearPopupInfoReceta(tupla) {
     blurBox.className = "blur-box";
 
     blurBox.innerHTML = `
-<<<<<<< HEAD
         <div class="info-receta">
             <button class="cerrar" onclick="cerrarPopup()">&times;</button>
 
@@ -168,15 +149,6 @@ function crearPopupInfoReceta(tupla) {
                 <div class="linea1-derecha">
                     <i class='bx bx-edit icono-receta' id="editar"></i>
                     <i class='bx bx-trash icono-receta' id="borrar"></i>
-=======
-        <div class="cerrar" onclick="cerrarPopup()">&times;</div>
-        <div class="info-receta">
-            <div class="linea1">
-                <span>${tupla.nombre}</span>
-                <div class="linea1-derecha">
-                    <i class='bx bx-edit icono-receta'></i>
-                    <i class='bx bx-trash icono-receta'></i>
->>>>>>> ec1931b12a1e66c622a2a70660b20e7641db3ae6
                 </div>
             </div>
             <hr>
@@ -184,22 +156,14 @@ function crearPopupInfoReceta(tupla) {
                 <p>Ingredientes</p>
                 <div class="linea2-derecha">
                     <i class='bx bx-book-open icono-receta'></i>
-<<<<<<< HEAD
                     <span class="num-ing" style="color: #8A8A8E">${tupla.ingredientes ? tupla.ingredientes.length : 0}</span>
-=======
-                    <span class="num-ing">${tupla.ingredientes ? tupla.ingredientes.length : 0}</span>
->>>>>>> ec1931b12a1e66c622a2a70660b20e7641db3ae6
                 </div>
             </div>
             <div class="linea3">
                 <p>Porciones</p>
                 <div class="linea3-derecha">
                     <i class='bx bx-doughnut-chart icono-receta'></i>
-<<<<<<< HEAD
                     <span class="num-por" style="color: #8A8A8E">${tupla.num_porciones}</span>
-=======
-                    <span class="num-por">${tupla.num_porciones}</span>
->>>>>>> ec1931b12a1e66c622a2a70660b20e7641db3ae6
                 </div>
             </div>
             <table>
