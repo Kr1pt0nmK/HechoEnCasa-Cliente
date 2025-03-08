@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Emergentes</title>
+    <title>Postres</title>
     <!-- Dependencias Externas  -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -125,7 +125,7 @@
         <div class="tipo-postre">
           <!-- Fijos  -->
           <div class="menu-seccion" id="botonFijos">
-            <div class="menu-icono-box activo">
+            <div class="menu-icono-box fijo activo">
               <i class='bx bx-food-menu icono-postre'></i>
             </div>
             <span>Fijos</span>
@@ -133,7 +133,7 @@
 
           <!-- Categoria  -->
           <div class="menu-seccion" id="botonCategoria">
-            <div class="menu-icono-box ">
+            <div class="menu-icono-box categoria">
               <i class='bx bx-purchase-tag-alt icono-postre'></i>
             </div>
             <span>Categorías</span>
@@ -141,7 +141,7 @@
 
           <!-- De temporada -->
           <div class="menu-seccion" id="botonTemporada">
-            <div class="menu-icono-box">
+            <div class="menu-icono-box temporada">
               <i class='bx bx-timer icono-postre'></i>
             </div>
             <span>Temporada</span>
@@ -149,7 +149,7 @@
 
           <!-- Emergentes  -->
           <div class="menu-seccion" id="botonEmergentes">
-            <div class="menu-icono-box">
+            <div class="menu-icono-box emergente">
               <i class='bx bx-cookie icono-postre'></i>
             </div>
             <span>Emergentes</span>
@@ -158,11 +158,141 @@
         <div class="caja-filtrar-buscar">
           <div class="caja-buscar">
             <input type="text" placeholder="Busca folios aquí..." />
-            <span><i class="bx bx-search bx-sm"></i></span>
+            <span>
+              <i class="bx bx-search bx-sm"></i>
+            </span>
           </div>
-          <div class="caja-filtrar"><i class="bx bx-filter bx-md"></i></div>
+          <div class="caja-filtrar" id="cajaFiltrar">
+            <i class="bx bx-filter bx-md"></i>
+          </div>
         </div>
       </div>
+
+      <div class="boton-agregar" id="botonAgregar">
+        <i class="bx bx-plus-circle bx-spin-hover bx-md"></i>
+      </div>
+
+      <section class="contenedor-elementos">
+        <!--Caja de la categoria-->
+        <div class="caja-elemento">
+          <div class="color-header"></div>
+          <div class="nombre-receta"><h2>Pays</h2></div>
+          <hr>
+        </div>
+      </section>
     </div>
+
+    <!-- Pop-up agregar categoria-->
+      <!--Crear desde JS-->
+    <!--div class="blur-box">
+      <button class="cerrar" onclick="cerrarPopup()">&times;</button>
+      
+      <div class="crear-categoria">
+        <div class="linea1">
+          <input class="input-nomC" type="text" placeholder="Categoría..">
+          <div class="linea1-derecha">
+            <i class='bx bx-edit' id = "btn-edit"></i>
+            <i class='bx bx-trash'></i>
+          </div>
+        </div>
+        <hr>
+        <div class="linea2">
+          <p>Tipo de atributo</p>
+          <div class="linea2-derecha">
+            <select>
+              <option hidden>...</option>
+              <option value="1">Frost</option>
+            </select>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>
+                <div class="btn-agregaing">+</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="btns">
+          <button class="btn-aceptar">Aceptar</button>
+          <div class="btn-cancelar" onclick="cerrarPopup()">Cancelar</div>
+        </div>
+
+      </div-->
+
+    <!-- Pop-up info categoria-->
+      <!--Crear desde JS-->
+    <!--div class="blur-box">
+      <div class="cerrar" onclick="cerrarPopup()">&times;</div>
+      
+      <div class="info-categoria">
+        <div class="linea1">
+          <input class="input-nomC" type="text" placeholder="Cupcakes" diseabled>
+          <div class="linea1-derecha">
+            <i class='bx bx-edit icono-categoria' id="btn-edit"></i>
+            <i class='bx bx-trash icono-categoria'></i>
+          </div>
+        </div>
+        <hr>
+        <div class="linea2">
+          <p>Tipo de atributo</p>
+          <div class="linea2-derecha">
+            <select>
+              <option hidden>...</option>
+              <option value="1">Frost</option>
+            </select>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> Queso crema</td>
+              <td>50</td>
+              <td>
+                <i class='bx bx-edit icono-categoria'></i>
+                <i class='bx bx-trash icono-categoria'></i>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>
+                <div class="btn-agregaing">+</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="btns">
+          <button class="btn-aceptar">Aceptar</button>
+          <div class="btn-cancelar" onclick="cerrarPopup()">Cancelar</div>
+        </div>
+
+      </div>
+    </div-->
+
   </body>
+
+  <script src="../JS/postres.js"></script>
+
 </html>

@@ -227,3 +227,37 @@ body {
 .bx {
   transition: var(--transicion);
 }
+
+/* == Estilo de los botones ACEPTAR/CANCELAR ==  */
+.btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-aceptar {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #57D481;
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-size: 17px;
+  font-family: var(--fuente);
+}
+
+.btn-cancelar {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #D44F4F;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-aceptar:hover {
+  background-color: #3ccb6b;
+}
+
+.btn-cancelar:hover {
+  background-color: #d63636;
+}

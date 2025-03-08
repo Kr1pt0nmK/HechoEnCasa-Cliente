@@ -19,32 +19,35 @@ hr {
   color: var(--color-texto-elemento);
 }
 
-.cerrar {
-  position: absolute;
-  left: 70%;
-  top: 25%;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-  background-color: white;
-  box-shadow: var(--elemento-sombra);
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .crear-receta, .info-receta {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  padding: 15px;
+  padding: 20px;
   width: 400px;
   border-radius: 5px;
   box-shadow: var(--elemento-sombra);
+}
+
+.cerrar {
+  position: absolute;
+  top: -26px;
+  width: 30px;
+  height: 30px;
+  left: 410px;
+  bottom: 100px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  color: #666;
+  cursor: pointer;
+  box-shadow: var(--elemento-sombra);
+  transition: all 0.2s ease-in-out;
 }
 
 .linea1, .linea2, .linea3 {
@@ -61,47 +64,33 @@ hr {
 
 .bx-edit, .bx-trash {
   cursor: pointer;
-}
-
-.btns {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-}
-
-.btn-aceptar {
-  padding: 5px 10px;
-  border-radius: 5px;
-  background-color: #57D481;
-  color: white;
-  cursor: pointer;
-}
-
-.btn-cancelar {
-  padding: 5px 10px;
-  border-radius: 5px;
-  background-color: #D44F4F;
-  color: white;
-  cursor: pointer;
-}
-
-.btn-aceptar:hover {
-  background-color: #3ccb6b;
-}
-
-.btn-cancelar:hover {
-  background-color: #d63636;
+  font-size: 1.5rem;
 }
 
 .input-num {
   text-align: center;
   border-radius: 5px;
   width: 30px;
+  border-color: #A49C9C;
 }
 
 .input-nom {
-  font-size: 25px;
   border: none;
+  outline: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 80%;
+  font-family: var(--fuente);
+}
+
+.nom-receta {
+  color: #444444;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 80%;
+  background-color: white;
+  border: none;
+  font-family: var(--fuente);
   outline: none;
 }
 
@@ -109,6 +98,9 @@ hr {
   color: #8A8A8E;
 }
 
+.num-ing {
+  color: #8A8A8E;
+}
 
 table {
   width: 100%;
@@ -137,9 +129,15 @@ table tr td:last-child {
   border-style: solid;
   border-width: 1px;
   border-radius: 15px;
+  border-color: #A49C9C;
+  color: #A49C9C;
   cursor: pointer;
 }
 
 .btn-agregaing:hover, .cerrar:hover  {
   background-color: #ececec;
+}
+
+.tabla {
+  border-radius: 10px;
 }

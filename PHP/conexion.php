@@ -1,11 +1,11 @@
 <?php
 
-$host = "autorack.proxy.rlwy.net";
-$port = 28232;
+$host = "srv574.hstgr.io";
+$port = 3306;
 $socket = "";
-$user = "root";
-$password = "CtMoIMkVciKXNsNSWxTqEFMseaLXKLUG";
-$dbname = "Hecho_en_casa";
+$user = "u431722329_dxicode";
+$password = "Dxicode2025";
+$dbname = "u431722329_Hecho_en_casa";
 
 $con = new mysqli($host, $user, $password, $dbname, $port, $socket)
     or die('Could not connect to the database server' . mysqli_connect_error());
