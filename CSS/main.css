@@ -115,6 +115,9 @@ body {
   position: absolute;
   backdrop-filter: blur(var(--blur-cantidad));
   z-index: 110;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* == Caja de busqueda y filtros == */
