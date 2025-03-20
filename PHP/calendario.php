@@ -16,3 +16,4 @@ if ($accion == "mostrar_pendientes") {
 
     echo json_encode($datos);
 }
+?>

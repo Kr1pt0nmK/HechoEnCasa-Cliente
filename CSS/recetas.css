@@ -27,8 +27,8 @@ hr {
   background-color: white;
   padding: 20px;
   width: 400px;
-  border-radius: 5px;
-  box-shadow: var(--elemento-sombra);
+  border-radius: var(--borde-redondeo-box);
+  box-shadow: var(--buscar-sombra);
 }
 
 .cerrar {
@@ -46,8 +46,8 @@ hr {
   text-align: center;
   color: #666;
   cursor: pointer;
-  box-shadow: var(--elemento-sombra);
-  transition: all 0.2s ease-in-out;
+  box-shadow: var(--buscar-sombra);
+  transition: var(--transicion);
 }
 
 .linea1, .linea2, .linea3 {
@@ -69,9 +69,11 @@ hr {
 
 .input-num {
   text-align: center;
-  border-radius: 5px;
+  border-radius: var(--borde-redondeo-box);
   width: 30px;
-  border-color: #A49C9C;
+  border: 1px solid var(--color-texto-elemento);
+  font-family: var(--fuente);
+  outline: none;
 }
 
 .input-nom {
@@ -95,17 +97,17 @@ hr {
 }
 
 .icono-receta {
-  color: #8A8A8E;
+  color: var(--color-texto-elemento);
 }
 
 .num-ing {
-  color: #8A8A8E;
+  color: var(--color-texto-elemento);
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  border-radius: 10px;
+  border-radius: var(--borde-redondeo-box);
   margin: 15px 0;
   font-size: 12px;
   text-align: center;
@@ -126,12 +128,13 @@ table tr td:last-child {
 }
 
 .btn-agregaing {
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 15px;
-  border-color: #A49C9C;
+  border: 1px solid var(--color-texto-elemento);
+  border-radius: var(--borde-redondeo-box);
   color: #A49C9C;
   cursor: pointer;
+  transition: var(--transicion);
+  background-color: white;
+  width: 50px;
 }
 
 .btn-agregaing:hover, .cerrar:hover  {
@@ -139,5 +142,89 @@ table tr td:last-child {
 }
 
 .tabla {
-  border-radius: 10px;
+  border-radius: var(--borde-redondeo-box);
+}
+
+/* --Estilos de la caja de opciones para los INGREDIENTES-- */
+.opciones-ingredientes {
+  background-color: white;
+  width: 150px;
+  padding: 10px;
+  text-align: center;
+  border-radius: var(--borde-redondeo-box);
+  box-shadow: var(--elemento-sombra);
+  height: 200px;
+}
+
+.input-op-ing {
+  text-align: center;
+  border-radius: var(--borde-redondeo-box);
+  width: 95%;
+  border: 1px solid var(--color-texto-elemento);
+  font-family: var(--fuente);
+  outline: none;
+  color: var(--color-texto-elemento);
+}
+
+.inp-cerrar {
+  display: flex;
+  gap: 5px;
+}
+
+.cierra-op {
+  border: none;
+  background-color: white;
+  color: var(--color-texto-elemento);
+  cursor: pointer;
+}
+
+.conHover:hover {
+  background-color: #ededed;
+}
+
+.lista-op {
+  height: 160px;
+  overflow-y: auto;
+}
+
+/* -- Apariencia del popup contraseña -- */
+.ventana-contraseña {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: var(--elemento-sombra);
+  border-radius: var(--borde-redondeo-box);
+  padding: 30px;
+  gap: 10px;
+  align-items: center;
+  width: 300px;
+}
+
+.ventana-contraseña h2 {
+  color: var(--color-texto-elemento);  
+  font-size: 18px;
+}
+
+.circulo {
+  border: 1px solid var(--color-texto-elemento);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.bx-lock{
+  font-size: 30px;
+  color: var(--color-texto-elemento);
+}
+
+.digitos {
+  display: flex;
+  gap: 20px;
+}
+
+.digito {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-texto-elemento);
+  border-radius: var(--borde-redondeo-box);
+  text-align: center;
 }

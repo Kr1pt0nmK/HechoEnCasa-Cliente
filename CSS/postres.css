@@ -20,7 +20,8 @@
   font-size: 2rem;
 }
 
-.cerrar {
+/* Comienza otra sección*/
+.cerrar-categoria {
   position: absolute;
   top: -26px;
   width: 30px;
@@ -30,10 +31,10 @@
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 50%;
-  font-size: 18px;
+  font-size: 25px;
   line-height: 30px;
   text-align: center;
-  color: #666;
+  color: var(--color-texto-elemento);
   cursor: pointer;
   box-shadow: var(--elemento-sombra);
   transition: all 0.2s ease-in-out;
@@ -47,7 +48,7 @@
   background-color: white;
   padding: 20px;
   width: 400px;
-  border-radius: 5px;
+  border-radius: var(--borde-redondeo-box);
   box-shadow: var(--elemento-sombra);
 }
 
@@ -58,13 +59,13 @@
 
 .linea1-derecha, .linea2-derecha {
   display: flex;
+  justify-content: space-between;
   margin-left: auto;
   align-items: center;
   gap: 5px;
 }
 
 .input-nomC {
-  font-family: var(--fuente);
   border: none;
   outline: none;
   color: #444444;
@@ -103,25 +104,24 @@ table tr td:last-child {
 }
 
 .btn-agregaing {
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 15px;
-  border-color: #A49C9C;
+  border: 1px solid var(--color-texto-elemento);
+  border-radius: var(--borde-redondeo-box);
   color: #A49C9C;
   cursor: pointer;
+  transition: var(--transicion);
+  background-color: white;
+  width: 50px;
 }
 
-.btn-agregaing:hover, .cerrar:hover  {
+.btn-agregaing:hover, .cerrar-popup:hover, .cerrar-categoria:hover  {
   background-color: #ececec;
 }
 
-select {
-  font-family: var(--fuente);
-  border-radius: 5px;
+.selectCategorias {
+  border-radius: var(--borde-redondeo-box);
   border-color: #A49C9C;
   color: #A49C9C;
   text-align: center;
-  /*appearance:none; //este sirve para quitarle la flechita hacia abajo */ 
 }
 
 .icono-categoria {
@@ -131,4 +131,563 @@ select {
 .bx-edit, .bx-trash {
   cursor: pointer;
   font-size: 1.5rem;
+}
+
+/* --Estilos de la caja de opciones para los ATRIBUTOS EXTRA-- */
+.opciones-atributos {
+  background-color: white;
+  width: auto;
+  padding: 10px;
+  text-align: center;
+  border-radius: var(--borde-redondeo-box);
+  box-shadow: var(--elemento-sombra);
+  height: 200px;
+}
+
+.input-op-atExt {
+  text-align: center;
+  border-radius: var(--borde-redondeo-box);
+  width: 95%;
+  border: 1px solid var(--color-texto-elemento);
+  outline: none;
+  color: var(--color-texto-elemento);
+  height: 23px;
+}
+
+.inp-cerrar {
+  display: flex;
+  gap: 5px;
+}
+
+.cierra-op {
+  border: none;
+  background-color: white;
+  color: var(--color-texto-elemento);
+  cursor: pointer;
+}
+
+.conHover:hover {
+  background-color: #ededed;
+}
+
+.lista-op {
+  height: 155px;
+  overflow-y: auto;
+}
+
+/*Fijos y emergentes*/
+.oculto {
+  display: none;
+}
+   
+.nombre-postre {
+  color: var(--color-texto-elemento);
+  font-size: 1rem;
+  padding: 0rem 0.5rem;
+  text-transform: capitalize;
+}
+   
+.imagen-postre {
+  width: 100%;
+  height: 6rem;
+  display: block;
+  object-fit: cover; 
+  border-top-left-radius: var(--borde-redondeo-box);
+  border-top-right-radius: var(--borde-redondeo-box);
+}
+   
+.div-nombre {
+  padding: 10px;
+  text-align: center;
+}
+
+/* Contenedor interno del popup */
+.popup-postre {
+  background-color: var(--color-pagina);
+  border-radius: var(--borde-redondeo-box);
+  box-shadow: var(--elemento-sombra);
+  width: 30rem;
+  max-width: 90vh;
+  max-height: 90vw;
+  position: fixed;
+  height: 96%;
+}
+
+.pop-emergente {
+ height: 30rem;
+}
+
+/* Contenedor interno del popup */
+.popup-postre {
+  background-color: var(--color-pagina);
+  border-radius: var(--borde-redondeo-box);
+  box-shadow: var(--elemento-sombra);
+  width: 30rem;
+  max-width: 90vh;
+  max-height: 90vw;
+  position: fixed;
+  height: 96%;
+}
+
+.pop-emergente {
+ height: 30rem;
+}
+
+
+/* Botón de cierre (X) en el popup */
+.cerrar-popup {
+ position: absolute;
+ top: -5px;
+ width: 30px;
+ height: 30px;
+ right: -40px;
+ bottom: 100px;
+ background-color: #fff;
+ border: 1px solid #ccc;
+ border-radius: 50%;
+ font-size: 25px;
+ line-height: 30px;
+ text-align: center;
+ color: var(--color-texto-elemento);
+ cursor: pointer;
+ box-shadow: var(--elemento-sombra);
+ transition: all 0.2s ease-in-out;
+}
+
+/* Encabezado del popup (ej. ícono subir imagen) */
+.popup-header {
+display: flex;
+justify-content: center;
+margin: 0;
+padding: 0;
+align-items: center;
+
+}
+
+
+.icono-editar {
+ display: flex;
+ position:absolute;
+ top: 15px;
+ right: 15px;
+ color: #8A8A8E;
+}
+
+.icono-editar.info {
+ color: white;
+}
+
+.popup-content {
+ padding-left: 2rem;
+ padding-right: 2rem;  
+ padding-top: 0.7rem;
+}
+
+.imgpop {
+ border-top-left-radius: 10px;
+ border-top-right-radius: 10px;
+
+}
+
+.icono-subir {
+  font-size: 3rem;
+  color: #aaa;
+  padding-top: 2.5rem;
+  padding-bottom: 0.5rem;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+textarea{
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: var(--borde-redondeo-box);
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size: 15px;
+  outline: none;
+} 
+
+input{
+ width: 100%;
+ padding: 0.5rem;
+ border-radius: var(--borde-redondeo-box);
+ outline: none;           
+}
+
+select, input, textarea{
+  font-family: var(--fuente);
+  color: var(--color-texto-elemento);
+}
+
+.selectFE { 
+ width: 45%;
+ height: 1.5rem;
+ padding-left: 0.5rem;
+ border-radius: var(--borde-redondeo-box);
+ border: 1px solid #ccc;
+ color: var(--color-texto-elemento);
+ outline: none;
+ text-align: center;
+}
+
+.nombreP {
+ width: 100%;
+ padding: 0.2rem;
+ border: none;
+ color: var(--color-texto-elemento);
+ font-size: 25px;
+ font-weight: bold;
+}
+
+
+/*PAQUETES DEL POPUP*/
+.contenedor-paquetes {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+/* Caja para mostrar/añadir paquetes */
+.caja-paquetes {
+  background-color: var(--color-pagina);
+  box-shadow: var(--elemento-sombra);
+  border-radius: var(--borde-redondeo-box);
+  width: 120px;
+  height: 100px;
+  max-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Opciones de unidad y checkbox a la derecha */
+.opciones-paquete {
+ display: flex;
+ flex-direction: column;
+ align-items:flex-start;
+}
+
+.opciones-paquete select {
+  border-radius: var(--borde-redondeo-box);
+  border: 1px solid #ccc;
+  color: var(--color-texto-elemento);
+  width: 100px;
+  text-align: center;
+}
+
+/* Checkbox “Requiere mínimo” */
+.requiere-minimo {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-texto-elemento);
+}
+
+
+/* Contenedor flotante del filtro */
+.dropdown-categorias {
+  background-color: var(--color-pagina);
+  box-shadow: var(--elemento-sombra);
+  border-radius: var(--borde-redondeo-box);
+  width: 220px; 
+  padding: 0.5rem;
+  z-index: 9999; 
+  font-family: var(--fuente);
+  position: absolute;
+  display: none;
+  top: 9rem;
+  right: 3rem;
+} 
+
+/* Cuando se muestre, usamos display: block */
+.dropdown-categorias.mostrar {
+  display: block;
+}
+
+/* Encabezado: campo de búsqueda + botón cerrar */
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+/* Campo de búsqueda */
+.dropdown-search {
+  border: 1px solid #ccc;
+  border-radius: var(--borde-redondeo-box);
+  padding: 0.3rem 0.3rem;
+  margin-right: 0.5rem;
+  color: var(--color-texto-elemento);
+  width: 80%;
+  font-family: var(--fuente);
+  text-align: center;
+}
+
+/* Botón de cerrar (X) */
+.dropdown-close {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #666;
+  position: absolute;
+  top: 0.4rem;
+  right: 1rem;
+}
+
+/* Lista de categorías */
+.dropdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 200px; 
+  overflow-y: auto;
+  text-align: center;
+}
+
+.dropdown-list li {
+  padding: 0.4rem;
+  cursor: pointer;
+  color: var(--color-texto-elemento);
+  transition: var(--transicion);
+  border-radius: 5px;
+}
+
+/* Efecto hover en cada categoría */
+.dropdown-list li:hover {
+  background-color: var(--icono-hover-fondo);
+}
+
+/* Caja de paquetes */
+.caja-paquetes {
+  background-color: var(--color-pagina);
+  box-shadow: var(--elemento-sombra);
+  border-radius: var(--borde-redondeo-box);
+  width: 120px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
+
+/* Botón “+” */
+.btn-agregar-paquete {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-texto-elemento);
+  margin-top: auto; 
+}
+
+/*AREA DE AGREGAR ATRIBUTOS PARA EL POPUP DE AGREGAR POSTRE*/
+.contenedor-atributos {
+  background-color: #fff; 
+  border-radius: 10px;   
+  padding: 1rem;
+  max-height: 4rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: var(--elemento-sombra);
+}
+
+.atributos-lista {
+  display: flex;
+  flex-direction: column; 
+  gap: 0.5rem; 
+}
+
+.atributo-nombre {
+  flex: 1; 
+  width: 100%; 
+  padding: 0.5rem;
+  border: none;
+  background: transparent;
+}
+
+.atributo-select {
+  border-radius: var(--borde-redondeo-box);
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+
+.atributo-row {
+  background-color: whitesmoke; 
+  border-radius: var(--borde-redondeo-box);     
+  box-shadow: var(--elemento-sombra); 
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;        
+  padding: 0.5rem 1rem; 
+  margin-bottom: 0.5rem; 
+  gap: 1rem; 
+  height: 2rem;
+}
+
+.tituloAtributo {
+  margin-top: 0.5rem;
+}
+
+
+/*PARTE DE ORLANDO*/
+.stock-muestra{
+  background-color: whitesmoke;
+  border-radius: var(--borde-redondeo-box);
+  box-shadow: var(--elemento-sombra);
+  border: 1px solid rgb(211, 211, 211);
+  width: 90px;
+  color: var(--color-texto-elemento);
+}
+
+.button-group {
+  display: flex;
+  gap: 5px; 
+  margin-left: 10px;
+}
+
+.stock-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  align-items: center;
+}
+
+
+.stock-container input {
+  width: 90px;
+  height: 25px;
+  text-align: center;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  align-items: center;
+  margin-left: 10px;
+  justify-content: center;
+}
+
+.minus {
+  background: #dc3545; 
+  color: white;
+}
+
+.plus {
+  background: #28a745; 
+  color: white;
+}
+
+.btn {
+  margin-top: 5px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  width: 30px; 
+  height: 30px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/*JAIRO*/
+.fondo {
+  background-color: var(--color-pagina);
+  box-shadow: var(--elemento-sombra);
+  border-radius: var(--borde-redondeo-box);
+  width: 120px;
+  height: 60px;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  padding-top: 20px;
+  gap: 0.5rem;
+}
+
+.cantidad-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.espacio {
+  display: flex;
+}
+
+.zona-abajo{
+  display: flex;
+  justify-content:space-around;
+}
+
+input[type="checkbox"] {
+  accent-color: blue;
+  width: 15px;
+  height: 15px;
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+}
+  
+.nombreP:disabled {
+  background-color: white; 
+  color: var(--color-texto-elemento); 
+  box-shadow: none ; 
+  opacity: 1 ;
+}
+
+/*POSTRES DE TEMPORADA*/
+.cajaContenido {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.switch {
+  position: relative;
+  width: 47px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: var(--borde-redondeo-box);
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(27px);
 }

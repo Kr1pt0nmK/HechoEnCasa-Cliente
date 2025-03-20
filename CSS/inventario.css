@@ -56,3 +56,148 @@ hr {
   background-color: var(--ingrediente-rojo);
   border: 1px solid var(--ingrediente-rojo-linea);
 }
+
+/*NUEVO*/
+.contenedor-popup {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  width: 630px;
+  border-radius: var(--borde-redondeo-box);
+  box-shadow: var(--elemento-sombra);
+}
+
+.cerrar, .cerrardos {
+  position: absolute;
+  top: -26px;
+  width: 30px;
+  height: 30px;
+  bottom: 100px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: var(--color-texto-elemento);
+  cursor: pointer;
+  box-shadow: var(--elemento-sombra);
+  transition: all 0.2s ease-in-out;
+}
+
+.cerrar {
+  left: 630px;
+}
+
+.cerrardos{
+  left: 300px; 
+}
+
+.cerrar-popup:hover{
+  background-color: #f2f2f2;
+  color: #000;
+  box-shadow: var(--elemento-sombra);
+}
+
+.formulario-popup {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+select, input {
+  padding: 8px;
+  border-radius: var( --borde-redondeo-box);
+  border: 1px solid #ddd;
+  font-family: var(--fuente);
+}
+
+.caja-inputs{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.boton-agregardos:hover{
+  background-color: #30a657;
+  color: white;
+  box-shadow: var(--elemento-sombra);
+}
+
+.nuevaMedida{
+  font-size: 18px;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  width: 85%;
+}
+
+.nuevaOpcion{
+  outline: none;
+  border: none;
+}
+
+.Titulo{
+  font-size: 25px;
+  font-weight: bold;
+  outline: none;
+  border: none;
+}
+
+.popup-contenMedida{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  width: 300px;
+  border-radius: var(--borde-redondeo-box);
+  box-shadow: var(--elemento-sombra);
+  height: 150px;
+  
+}
+
+.derecha {
+  display: flex;
+  align-items: center;
+}
+
+.cambio{
+  display: flex;
+  flex-direction: row; 
+
+}
+
+.btnsdos{
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-direction: row;
+}
+
+.icono-pos {
+  cursor: pointer;
+  color: #8A8A8E;
+  font-size: 1.5rem;
+}
+
+.bx-edit, .bx-trash {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.iconos{
+  display: flex;
+  left: 550px;
+  top:35px;
+  position: absolute;
+}

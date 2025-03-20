@@ -1,10 +1,10 @@
 const contElementos = document.querySelector(".contenedor-elementos");
 
 document.addEventListener("DOMContentLoaded", () => {
-    mostrarIngredientes();
+    mostrarRecetas();
 });
 
-let mostrarIngredientes = () => {
+let mostrarRecetas = () => {
     return fetch("../PHP/recetas.php?action=mostrar") // Retornar la Promise
         .then(response => response.json())
         .then(elemento => {
@@ -34,7 +34,6 @@ let mostrarIngredientes = () => {
         });
 };
 
-// Popup para agregar receta
 document.getElementById("botonAgregar").addEventListener("click", () => {
     crearPopupAgregarReceta();
 
@@ -48,8 +47,10 @@ document.getElementById("botonAgregar").addEventListener("click", () => {
             inputNom.disabled = false
         }
     })
+
 });
 
+// Popup para Agregar Receta
 function crearPopupAgregarReceta() {
     const blurBox = document.createElement("div");
     blurBox.className = "blur-box";
@@ -69,7 +70,7 @@ function crearPopupAgregarReceta() {
             <div class="linea2">
                 <p>Ingredientes</p>
                 <div class="linea2-derecha">
-                    <i class='bx bx-book-open'></i>
+                    <i class='bx bx-book-open icono-receta'></i>
                     <span class="num-ing">...</span>
                 </div>
             </div>
@@ -77,7 +78,7 @@ function crearPopupAgregarReceta() {
                 <p>Porciones</p>
                 <div class="linea3-derecha">
                     <i class='bx bx-doughnut-chart icono-receta'></i>
-                    <input class="input-num" style="color: #8A8A8E type="number" placeholder="..." min="0">
+                    <input class="input-num" style="color: #8A8A8E" type="number" placeholder="..." min="0">
                 </div>
             </div>
 
@@ -96,12 +97,12 @@ function crearPopupAgregarReceta() {
                         <td></td>
                         <td></td>
                         <td>
-                            <div class="btn-agregaing">+</div>
+                            <button class="btn-agregaing" id="btn-agregaing" onclick="opcionesIngredientes()">+</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
-
+            
             <div class="btns">
                 <button class="btn-aceptar">Aceptar</button>
                 <div class="btn-cancelar" onclick="cerrarPopup()">Cancelar</div>
@@ -113,7 +114,7 @@ function crearPopupAgregarReceta() {
     document.body.appendChild(blurBox);
 }
 
-// Popup para info receta
+// Aparece el popup Info Receta
 document.querySelector(".contenedor-elementos").addEventListener("click", (event) => {
     let elemento = event.target.closest(".caja-elemento"); 
     if (elemento) {
@@ -136,6 +137,7 @@ document.querySelector(".contenedor-elementos").addEventListener("click", (event
     }
 });
 
+// Popup para Info Receta
 function crearPopupInfoReceta(tupla) {
     const blurBox = document.createElement("div");
     blurBox.className = "blur-box";
@@ -166,6 +168,7 @@ function crearPopupInfoReceta(tupla) {
                     <span class="num-por" style="color: #8A8A8E">${tupla.num_porciones}</span>
                 </div>
             </div>
+
             <table>
                 <thead>
                     <tr>
@@ -192,11 +195,12 @@ function crearPopupInfoReceta(tupla) {
                         <td></td>
                         <td></td>
                         <td>
-                            <div class="btn-agregaing">+</div>
+                            <div class="btn-agregaing" id="btn-agregaing" onclick="opcionesIngredientes()">+</div>
                         </td>
                     </tr>
                 </tbody>
             </table>
+
             <div class="btns">
                 <button class="btn-aceptar">Aceptar</button>
                 <div class="btn-cancelar" onclick="cerrarPopup()">Cancelar</div>
@@ -207,6 +211,39 @@ function crearPopupInfoReceta(tupla) {
     document.body.appendChild(blurBox);
 }
 
+// Caja de opciones de Ingredientes 
+function opcionesIngredientes() {
+    const opciones = document.createElement("div");
+    opciones.className = "blur-box";
+
+    opciones.innerHTML = `
+    <div class="opciones-ingredientes">
+        <ul>
+            <li>
+                <div class="inp-cerrar">
+                    <input class="input-op-ing" type="text" placeholder="Ingrediente...">
+                    <button class="cierra-op">&times;</button>
+                </div>
+            </li>
+        </ul>
+        <ul class="lista-op">
+            <li class="conHover">Queso</li>
+            <li class="conHover">Leche</li>
+            <li class="conHover">Crema</li>
+            <li class="conHover">Huevo</li>
+            <li class="conHover">Pan</li>
+            <li class="conHover">Pan</li>
+            <li class="conHover">Pan</li>
+        </ul>
+    </div>
+    `;
+
+    document.body.appendChild(opciones);
+
+    opciones.querySelector(".cierra-op").addEventListener("click", () => {
+        opciones.remove();
+    });
+}
 
 function cerrarPopup() {
     const blurBox = document.querySelector(".blur-box");
